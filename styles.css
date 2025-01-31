@@ -43,9 +43,31 @@ footer {
   text-decoration: none;
 }
 
+.icon-link {
+  font-size: 1rem;
+  color: inherit;
+  width: 40px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 100%;
+  /*These two work together, apply grid layout for centering the image*/
+  display: grid;
+  place-items: center;
+
+  text-decoration: none;
+}
+
+.icon-link:hover {
+  background: rgb(235, 235, 235);
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
 .img-button {
   border: none;
   background: transparent; /*What does this do?*/
+  text-decoration: none;
 }
 
 .img-button img {
@@ -54,6 +76,7 @@ footer {
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 100%;
+  /*text-decoration: none;*/
 }
 
 .climate-link i {
