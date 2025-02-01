@@ -3,10 +3,20 @@
   margin: 0;
   padding: 0;
   font-family: "inter", sans-serif;
+  color: #0f172a;
 }
 
 body {
   font-size: 0.9rem; /*What does this do?*/
+  /*Both of these take up as much space as possible*/
+  display: flex;
+  flex-direction: column;
+  /*Body takes at least the minimum height of the entire page*/
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
 }
 
 .google-header {
@@ -26,16 +36,11 @@ header {
   margin-left: 15px;
 }
 
-main {
-}
-
-footer {
-}
-
 .nav-container {
   display: flex;
   align-items: center;
   gap: 1rem /*14px*/;
+  margin-right: 15px;
 }
 
 .text-link {
@@ -71,12 +76,11 @@ footer {
 }
 
 .img-button img {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 100%;
-  /*text-decoration: none;*/
 }
 
 .climate-link i {
@@ -84,4 +88,147 @@ footer {
   margin-right: 5px; /* Space between the icon and text */
   font-size: 16px; /* Adjust size */
   vertical-align: middle; /* Align with text */
+}
+
+input {
+  visibility: visible;
+  opacity: 1;
+  z-index: 1;
+}
+
+/*Works along side the body flex*/
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.title-text {
+  font-size: 3rem;
+}
+
+.input-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 443px;
+  border: 1.5px solid rgb(235, 235, 235);
+  padding: 1rem;
+  border-radius: 24px;
+  box-shadow: 0 0 4px 1px lightgray;
+}
+
+.input-bar:hover,
+.input-bar:focus-within {
+  box-shadow: 0 0 4px 1px whitesmoke;
+}
+
+.input-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  width: 100%; /*Prevents icons from being pushed off the edge*/
+}
+
+.input-bar div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input-icon {
+  background: transparent;
+  border: none;
+}
+
+.input-icon:hover {
+  opacity: 0.6;
+}
+
+.button-grid {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.button-grid button {
+  /*Selects the buttons within the class only*/
+  /*Make the border first invisible, then change it later to prevent jumping*/
+  padding: 0.5rem 1rem; /*First is verticle, second*/
+  border: 1px solid transparent;
+  background-color: rgb(247, 247, 247);
+  border-radius: 0.25rem;
+}
+
+.button-grid button:hover {
+  border: 1px solid lightgray;
+}
+
+.language-text {
+  font-size: small;
+}
+
+.language-link {
+  color: #1a0dab;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.language-link:hover {
+  text-decoration: underline;
+  cursor: ;
+}
+
+footer {
+  background: rgb(244, 244, 244);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer > div {
+  padding: 1rem;
+}
+
+.advertising-nav,
+.settings-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.advertising-nav a,
+.settings-nav a {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.advertising-nav a:hover,
+.settings-nav a:hover {
+  text-decoration: underline;
+}
+
+.nav-container-second .text-link {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .advertising-nav,
+  .settings-nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around; /*As the webpage scales, there will be an equal amout of spacing between them */
+    text-decoration: none;
+    gap: 1rem;
+  }
 }
